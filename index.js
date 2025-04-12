@@ -9,7 +9,7 @@ import authRoutes from "./routes/auth.routes.js";
 import { setupSwagger } from "./swagger.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = 7000;
 
 app.use(cors());
 app.use(express.json());
