@@ -9,6 +9,11 @@ const postPaths = {
           description: "Пост успешно создан.",
         },
       },
+      security: [
+        {
+          BearerAuth: [],
+        },
+      ],
       requestBody: {
         required: true,
         content: {
