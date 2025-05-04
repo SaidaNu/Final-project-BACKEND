@@ -15,7 +15,7 @@ class AuthController {
           .json({ message: "Данная электронная почта занята!" });
       }
 
-    // Хэшируем пароль
+      // Хэшируем пароль
       const hashedPassword = await hashPassword(password);
 
       const newUser = await new User({
@@ -46,7 +46,7 @@ class AuthController {
       }
 
       const token = jwt.sign(
-        { userId: user._id, isAdmin: user.isAdmin }, // Payload
+        { userId: user._id, name: user.name, isAdmin: user.isAdmin }, // Payload
         "secretkey", // Secret key
         { expiresIn: "12h" } // Expires In (options)
       );

@@ -7,12 +7,12 @@ const commentSchema = new mongoose.Schema({
     trim: true,
   },
   user: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: [true],
   },
   post: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Post",
     required: [true],
   },
@@ -23,4 +23,4 @@ const commentSchema = new mongoose.Schema({
   },
 });
 
-export const Comment = mongoose.model("comment", commentSchema);
+export const Comment = mongoose.model("Comment", commentSchema);

@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
@@ -18,9 +18,9 @@ const userSchema = new mongoose.Schema({
     trim: true,
   },
   isAdmin: {
-    type: Boolean, 
+    type: Boolean,
     required: true,
-    default: false
+    default: false,
   },
   posts: {
     type: [mongoose.Schema.Types.ObjectId],

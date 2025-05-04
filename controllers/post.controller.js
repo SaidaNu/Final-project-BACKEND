@@ -45,7 +45,16 @@ class PostController {
   async getPostById(req, res) {
     try {
       const { id } = req.params;
-      const post = await Post.findById(id);
+      const post = await Post.findById(id)
+        .populate("user", "name") // подтянуть автора поста (только имя)
+        .populate({
+          path: "comments",
+          populate: {
+            path: "user",
+            select: "name", // подтянуть автора каждого комментария
+          },
+        });
+
       if (!post) {
         throw new Error(`Пост с id ${id} не найден.`);
       }
